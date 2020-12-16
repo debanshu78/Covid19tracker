@@ -247,10 +247,10 @@ app.post("/section4",function(req,res){
       ],update_existing:true
   };
   const jsonData=JSON.stringify(data);
-  const url="https://us10.api.mailchimp.com/3.0/lists/decc12c3d7";
+  const url="...";
   const options={
   method:"POST",
-  auth:"debanshu78:c31a72a6c75249fe8f0335d496a363ba-us10"
+  auth:"..."
   };
 
   const request=https.request(url,options,function(response){
