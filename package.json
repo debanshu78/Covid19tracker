@@ -1,0 +1,19 @@
+{
+  "name": "covidweb",
+  "version": "1.0.0",
+  "description": "This project is intended for track covid data of state and district of india",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Debanshu Rout",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "got": "^11.3.0",
+    "nodemon": "^2.0.4"
+  }
+}

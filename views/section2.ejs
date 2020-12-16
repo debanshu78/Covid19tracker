@@ -1,0 +1,330 @@
+				
+<%- include('header'); -%> 
+
+<div class="inner">
+	<nav id="tmMainNav" class="tm-main-nav">
+		<ul>
+			<li>
+				<a href="/" id="tmNavLink1" class="scrolly" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
+					<i class="fas fa-home tm-nav-fa-icon"></i>
+					<span>Introduction</span>
+				</a>
+			</li>
+			<li>
+				<a href="/section2" id="tmNavLink2" class="scrolly active" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel">
+					<i class="fas fa-map tm-nav-fa-icon"></i>
+					<span>Statewise Data</span>
+				</a>
+			</li>							
+			<li>
+				<a href="/section3" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
+					<i class="fas fa-users tm-nav-fa-icon"></i>
+					<span>Districtwise Data</span>
+				</a>
+			</li>
+			<li>
+				<a href="/section5" class="scrolly" data-bg-img="constructive_bg_05.jpg" data-page="#tm-section-5">
+					<i class="fas fa-question-circle tm-nav-fa-icon"></i>
+					<span>Symptoms</span>
+				</a>
+			</li>
+			<li>
+				<a href="/section4" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4">
+					<i class="fas fa-comments tm-nav-fa-icon"></i>
+					<span>Contact Us</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+
+<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+
+					<!-- section 2 -->
+					<section id="tm-section-2" class="tm-section ">						
+						<div class="row mb-4">
+							<header class="col-xl-12"><h1 class="tm-text-shadow"><%=inputname%>:-</h1>		
+						</div>
+						
+						<form action="/section2" method="post">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control form-control-lg" placeholder="State's name" name="statename" aria-label="State's name" aria-describedby="button-addon2"  list="datalist" autocomplete="off" required>
+							<datalist id="datalist" style="height:3.1em"> 
+								<option value="Andhra Pradesh"></option> 
+								<option value="Arunachal Pradesh"></option> 
+								<option value="Assam"></option> 
+								<option value="Bihar"></option> 
+								<option value="Chhattisgarh"></option> 
+								<option value="Goa"></option> 
+								<option value="Gujarat"></option> 
+								<option value="Haryana"></option> 
+								<option value="Himachal Pradesh"></option> 
+								<option value="Jammu and Kashmir"></option> 
+								<option value="Jharkhand"></option> 
+								<option value="Karnataka"></option> 
+								<option value="Kerala"></option>
+								<option value="Madhya Pradesh"></option> 
+								<option value="Maharashtra"></option> 
+								<option value="Manipur"></option> 
+								<option value="Meghalaya"></option>  
+								<option value="Mizoram"></option> 
+								<option value="Nagaland"></option> 
+								<option value="Odisha"></option> 
+								<option value="Punjab"></option> 
+								<option value="Rajasthan"></option> 
+								<option value="Sikkim"></option> 
+								<option value="Tamil Nadu"></option> 
+								<option value="Telangana"></option> 
+								<option value="Tripura"></option> 
+								<option value="Uttar Pradesh"></option> 
+								<option value="Uttarakhand"></option> 
+								<option value="West Bengal"></option> 
+								<option value="Andaman and Nicobar Islands"></option> 
+								<option value="Chandigarh"></option>
+								<option value="Delhi"></option>
+								<option value="Lakshadweep"></option>
+								<option value="Ladakh"></option>
+								<option value="Puducherry"></option>
+								</datalist>
+
+
+							<div class="input-group-append">
+								
+								  <button class="btn btn-lg btn-secondary"  id="button-addon2">Search</button>
+								
+							</div>
+						  </div>
+						</form>
+						<div class="alert  alert-dismissible fade" role="alert">
+							<strong><%=inputname%></strong> is not exist or invalid,please check out the given suggestion list... 
+							<button type="button" class="close" onclick="hider()"     data-dismiss="alert" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-procedures tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Confrimed:</h3>
+										<h3><%=confirmedstate%></h3>
+									</div>
+								</div>
+							</div>	
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-stethoscope mr-4 tm-icon-circled tm-icon-media"></i>	
+									<div class="media-body">
+										<h3>Recovered:</h3>
+										<h3><%=recoveredstate%></h3>	
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-skull-crossbones mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Death:</h3>
+										<h3><%=deathstate%></h3>		
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-percent mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Recovery Rate:</h3>
+										<h3><%=rpstate%>%</h3>	
+										
+									</div>
+								</div>
+							</div>			          		
+							<h6>Last update: <%=updateon%> </h6>
+						</div>
+												               
+					</section>
+
+				</div>	<!-- .tm-content -->							
+				<footer class="footer-link">
+					<p class="tm-copyright-text">Copyright &copy; 2020 Debanshu Rout
+					
+					- Design:DR</p>
+				</footer>
+				</div>	<!-- row -->			
+				</div>
+				<div id="preload-01"></div>
+				<div id="preload-02"></div>
+				<div id="preload-03"></div>
+				<div id="preload-04"></div>
+				<div id="preload-05"></div>
+				
+				<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+				<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+				<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+				<script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
+				
+				<script>
+				
+				var sidebarVisible = false;
+				var currentPageID = "#tm-section-2";
+				
+				function hider()
+					{
+					  $(".alert").removeClass("show");
+					}
+				//Setup Carousel
+				function setupCarousel() {
+				
+				// If current page isn't Carousel page, don't do anything.
+				if($('#tm-section-2').css('display') == "none") {
+				}
+				else {	// If current page is Carousel page, set up the Carousel.
+				
+				var slider = $('.tm-img-slider');
+				var windowWidth = $(window).width();
+				
+				if (slider.hasClass('slick-initialized')) {
+					slider.slick('destroy');
+				}
+				
+				if(windowWidth < 640) {
+					slider.slick({
+						  dots: true,
+						  infinite: false,
+						  slidesToShow: 1,
+						  slidesToScroll: 1
+					  });
+				}
+				else if(windowWidth < 992) {
+					slider.slick({
+						  dots: true,
+						  infinite: false,
+						  slidesToShow: 2,
+						  slidesToScroll: 1
+					  });
+				}
+				else {
+					// Slick carousel
+					  slider.slick({
+						  dots: true,
+						  infinite: false,
+						  slidesToShow: 3,
+						  slidesToScroll: 2
+					  });
+				}
+				
+				// Init Magnific Popup
+				$('.tm-img-slider').magnificPopup({
+				  delegate: 'a', // child items selector, by clicking on it popup will open
+				  type: 'image',
+				  gallery: {enabled:true}
+				  // other options
+				});
+				}
+				}
+				
+				// Setup Nav
+				function setupNav() {
+				// Hide the nav on mobile
+				$("#tmSideBar").removeClass("show");	    
+				}
+				
+				
+				// Setup Nav Toggle Button
+				function setupNavToggle() {
+				
+				$("#tmMainNavToggle").on("click", function(){
+				$(".sidebar").toggleClass("show");
+				});
+				}
+				
+				// If there is enough room, stick the footer at the bottom of page content.
+				// If not, place it after the page content
+				function setupFooter() {
+				
+				var padding = 100;
+				var footerPadding = 40;
+				var mainContent = $("section"+currentPageID);
+				var mainContentHeight = mainContent.outerHeight(true);
+				var footer = $(".footer-link");
+				var footerHeight = footer.outerHeight(true);
+				var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+				var windowHeight = $(window).height();		
+				
+				if(totalPageHeight > windowHeight){
+				  $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+				  footer.css("bottom", footerHeight + "px");  			
+				}
+				else {
+				  $(".tm-content").css("margin-bottom", "0");
+				  footer.css("bottom", "20px");  				
+				}  			
+				}
+				
+				// Everything is loaded including images.
+				$(window).on("load", function(){
+					var er="<%=error%>";
+					if(er==="true")
+					{
+						$(".alert").addClass("alert-warning show");				
+					}
+				// Render the page on modern browser only.
+				if(renderPage) {
+				// Remove loader
+				  $('body').addClass('loaded');
+				
+				  // Page transition
+				  var allPages = $(".tm-section");
+				
+				  // Handle click of "Continue", which changes to next page
+				  // The link contains data-nav-link attribute, which holds the nav item ID
+				  // Nav item ID is then used to access and trigger click on the corresponding nav item
+				  var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+				
+				if(linkToAnotherPage != null) {
+					
+					linkToAnotherPage.on("click", function(){
+						var navItemToHighlight = linkToAnotherPage.data("navLink");
+						$("a" + navItemToHighlight).click();
+					});
+				}
+				  
+				  // Hide all pages
+				  allPages.hide();
+				
+				  $("#tm-section-2").fadeIn();
+				
+				 // Set up background first page
+				 var bgImg = $("#tmNavLink2").data("bgImg");
+				 
+				 $.backstretch("img/" + bgImg, {fade: 500});
+				
+				 // Setup Carousel, Nav, and Nav Toggle
+				setupCarousel();
+				setupNav();
+				setupNavToggle();
+				setupFooter();
+				
+				// Resize Carousel upon window resize
+				$(window).resize(function() {
+					setupCarousel();
+					setupFooter();
+				});
+				}	      	
+				});
+				
+				</script>
+				</body>
+				<script>
+					if ('serviceWorker' in navigator) {
+					   console.log("Will the service worker register?");
+					   navigator.serviceWorker.register('service-worker.js')
+						 .then(function(reg){
+						   console.log("Yes, it did.");
+						}).catch(function(err) {
+						   console.log("No it didn't. This happened:", err)
+					   });
+					}
+				   </script>
+				</html>

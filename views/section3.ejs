@@ -1,0 +1,1024 @@
+    
+<%- include('header'); -%> 
+<div class="inner">
+	<nav id="tmMainNav" class="tm-main-nav">
+		<ul>
+			<li>
+				<a href="/" id="tmNavLink1" class="scrolly" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
+					<i class="fas fa-home tm-nav-fa-icon"></i>
+					<span>Introduction</span>
+				</a>
+			</li>
+			<li>
+				<a href="/section2" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel">
+					<i class="fas fa-map tm-nav-fa-icon"></i>
+					<span>Statewise Data</span>
+				</a>
+			</li>							
+			<li>
+				<a href="/section3" class="scrolly  active" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-3">
+					<i class="fas fa-users tm-nav-fa-icon"></i>
+					<span>Districtwise Data</span>
+				</a>
+            </li>
+            <li>
+				<a href="/section5" class="scrolly" data-bg-img="constructive_bg_05.jpg" data-page="#tm-section-5">
+					<i class="fas fa-question-circle tm-nav-fa-icon"></i>
+					<span>Symptoms</span>
+				</a>
+			</li>
+			<li>
+				<a href="/section4" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4">
+					<i class="fas fa-comments tm-nav-fa-icon"></i>
+					<span>Contact Us</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+
+<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+    <!-- section 3 -->
+        <section id="tm-section-3" class="tm-section">						
+            <div class="row mb-4">
+                <header class="col-xl-12"><h2 class="tm-text-shadow"><%=inputname%>:-</h2></header>		
+            </div>
+            
+            <form action="/section3" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-lg" placeholder="District's name" name="districtname" aria-label="District's name" aria-describedby="button-addon2"  list="datalist"  autocomplete="off" required>
+                <datalist id="datalist"> 
+                    <option value="Nicobars,Andaman and Nicobar Islands"></option> 
+                    <option value="North and Middle Andaman,Andaman and Nicobar Islands"></option> 
+                    <option value="South Andaman,Andaman and Nicobar Islands"></option> 
+                    <option value="Anantapur,Andhra Pradesh"></option> 
+                    <option value="Chittoor,Andhra Pradesh"></option> 
+                    <option value="East Godavari,Andhra Pradesh"></option> 
+                    <option value="Guntur,Andhra Pradesh"></option> 
+                    <option value="Y.S.R. Kadapa,Andhra Pradesh"></option> 
+                    <option value="Krishna,Andhra Pradesh"></option> 
+                    <option value="Kurnool,Andhra Pradesh"></option>
+                    <option value="S.P.S. Nellore,Andhra Pradesh"></option>
+                    <option value="Prakasam,Andhra Pradesh"></option>
+                    <option value="Srikakulam,Andhra Pradesh"></option>
+                    <option value="Visakhapatnam,Andhra Pradesh"></option>
+                    <option value="Vizianagaram,Andhra Pradesh"></option>
+                    <option value="West Godavari,Andhra Pradesh"></option>
+                    <option value="Anjaw,Arunachal Pradesh"></option>
+                    <option value="Siang,Arunachal Pradesh"></option>
+                    <option value="Changlang,Arunachal Pradesh"></option>
+                    <option value="East Kameng,Arunachal Pradesh"></option>
+                    <option value="East Siang,Arunachal Pradesh"></option>
+                    <option value="Kamle,Arunachal Pradesh"></option>
+                    <option value="Kra Daadi,Arunachal Pradesh"></option>
+                    <option value="Kurung Kumey,Arunachal Pradesh"></option>
+                    <option value="Lepa Rada,Arunachal Pradesh"></option>
+                    <option value="Lohit,Arunachal Pradesh"></option>
+                    <option value="Longding,Arunachal Pradesh"></option>
+                    <option value="Lower Dibang Valley,Arunachal Pradesh"></option>
+                    <option value="Lower Siang,Arunachal Pradesh"></option>
+                    <option value="Lower Subansiri,Arunachal Pradesh"></option>
+                    <option value="Namsai,Arunachal Pradesh"></option>
+                    <option value="Pakke Kessang,Arunachal Pradesh"></option>
+                    <option value="Papum Pare,Arunachal Pradesh"></option>
+                    <option value="Shi Yomi,Arunachal Pradesh"></option>
+                    <option value="Tawang,Arunachal Pradesh"></option>
+                    <option value="Tirap,Arunachal Pradesh"></option>
+                    <option value="Upper Siang,Arunachal Pradesh"></option>
+                    <option value="Upper Subansiri,Arunachal Pradesh"></option>
+                    <option value="West Kameng,Arunachal Pradesh"></option>
+                    <option value="West Siang,Arunachal Pradesh"></option>            
+                    <option value="Baksa,Assam"></option>
+                    <option value="Barpeta,Assam"></option>
+                    <option value="Biswanath,Assam"></option>
+                    <option value="Bongaigaon,Assam"></option>
+                    <option value="Cachar,Assam"></option>
+                    <option value="Charaideo,Assam"></option>
+                    <option value="Chirang,Assam"></option>
+                    <option value="Darrang,Assam"></option>
+                    <option value="Dhemaji,Assam"></option>
+                    <option value="Dhubri,Assam"></option>
+                    <option value="Dibrugarh,Assam"></option>
+                    <option value="Dima Hasao,Assam"></option>
+                    <option value="Goalpara,Assam"></option>
+                    <option value="Golaghat,Assam"></option>
+                    <option value="Hailakandi,Assam"></option>
+                    <option value="Hojai,Assam"></option>
+                    <option value="Jorhat,Assam"></option>
+                    <option value="Kamrup,Assam"></option>
+                    <option value="Kamrup Metropolitan,Assam"></option>
+                    <option value="Karbi Anglong,Assam"></option>
+                    <option value="Karimganj,Assam"></option>
+                    <option value="Kokrajhar,Assam"></option>
+                    <option value="Lakhimpur,Assam"></option>
+                    <option value="Majuli,Assam"></option>
+                    <option value="Morigaon,Assam"></option>
+                    <option value="Nagaon,Assam"></option>
+                    <option value="Nalbari,Assam"></option>
+                    <option value="Sivasagar,Assam"></option>
+                    <option value="Sonitpur,Assam"></option>
+                    <option value="South Salmara Mankachar,Assam"></option>
+                    <option value="Tinsukia,Assam"></option>
+                    <option value="Udalguri,Assam"></option>
+                    <option value="West Karbi Anglong,Assam"></option>
+                    <option value="Araria,Bihar"></option>
+                    <option value="Arwal,Bihar"></option>
+                    <option value="Aurangabad,Bihar"></option>
+                    <option value="Banka,Bihar"></option>
+                    <option value="Begusarai,Bihar"></option>
+                    <option value="Bhagalpur,Bihar"></option>
+                    <option value="Bhojpur,Bihar"></option>
+                    <option value="Buxar,Bihar"></option>
+                    <option value="Darbhanga,Bihar"></option>
+                    <option value="East Champaran,Bihar"></option>
+                    <option value="Gaya,Bihar"></option>
+                    <option value="Gopalganj,Bihar"></option>
+                    <option value="Jamui,Bihar"></option>
+                    <option value="Jehanabad,Bihar"></option>
+                    <option value="Kaimur,Bihar"></option>
+                    <option value="Katihar,Bihar"></option>
+                    <option value="Khagaria,Bihar"></option>
+                    <option value="Kishanganj,Bihar"></option>
+                    <option value="Lakhisarai,Bihar"></option>
+                    <option value="Madhepura,Bihar"></option>
+                    <option value="Madhubani,Bihar"></option>
+                    <option value="Munger,Bihar"></option>
+                    <option value="Muzaffarpur,Bihar"></option>
+                    <option value="Nalanda,Bihar"></option>
+                    <option value="Nawada,Bihar"></option>
+                    <option value="Patna,Bihar"></option>
+                    <option value="Purnia,Bihar"></option>
+                    <option value="Rohtas,Bihar"></option>
+                    <option value="Saharsa,Bihar"></option>
+                    <option value="Samastipur,Bihar"></option>
+                    <option value="Saran,Bihar"></option>
+                    <option value="Sheikhpura,Bihar"></option>
+                    <option value="Sheohar,Bihar"></option>
+                    <option value="Sitamarhi,Bihar"></option>
+                    <option value="Siwan,Bihar"></option>
+                    <option value="Supaul,Bihar"></option>
+                    <option value="Vaishali,Bihar"></option>
+                    <option value="West Champaran,Bihar"></option>
+                    <option value="Chandigarh,Chandigarh"></option>
+                    <option value="Balod,Chhattisgarh"></option>
+                    <option value="Baloda Bazar,Chhattisgarh"></option>
+                    <option value="Balrampur,Chhattisgarh"></option>
+                    <option value="Bastar,Chhattisgarh"></option>
+                    <option value="Bemetara,Chhattisgarh"></option>
+                    <option value="Bijapur,Chhattisgarh"></option>
+                    <option value="Bilaspur,Chhattisgarh"></option>
+                    <option value="Dakshin Bastar Dantewada,Chhattisgarh"></option>
+                    <option value="Dhamtari,Chhattisgarh"></option>
+                    <option value="Durg,Chhattisgarh"></option>
+                    <option value="Gariaband,Chhattisgarh"></option>
+                    <option value="Gaurela Pendra Marwahi,Chhattisgarh"></option>
+                    <option value="Janjgir Champa,Chhattisgarh"></option>
+                    <option value="Jashpur,Chhattisgarh"></option>
+                    <option value="Kabeerdham,Chhattisgarh"></option>
+                    <option value="Uttar Bastar Kanker,Chhattisgarh"></option>
+                    <option value="Kondagaon,Chhattisgarh"></option>
+                    <option value="Korba,Chhattisgarh"></option>
+                    <option value="Koriya,Chhattisgarh"></option>
+                    <option value="Mahasamund,Chhattisgarh"></option>
+                    <option value="Mungeli,Chhattisgarh"></option>
+                    <option value="Narayanpur,Chhattisgarh"></option>
+                    <option value="Raigarh,Chhattisgarh"></option>
+                    <option value="Raipur,Chhattisgarh"></option>
+                    <option value="Rajnandgaon,Chhattisgarh"></option>
+                    <option value="Sukma,Chhattisgarh"></option>
+                    <option value="Surajpur,Chhattisgarh"></option>
+                    <option value="Surguja,Chhattisgarh"></option>
+                    <option value="Central Delhi,Delhi"></option>
+                    <option value="East Delhi,Delhi"></option>
+                    <option value="New Delhi,Delhi"></option>
+                    <option value="North Delhi,Delhi"></option>
+                    <option value="North East Delhi,Delhi"></option>
+                    <option value="North West Delhi,Delhi"></option>
+                    <option value="Shahdara,Delhi"></option>
+                    <option value="South Delhi,Delhi"></option>
+                    <option value="South East Delhi,Delhi"></option>
+                    <option value="South West Delhi,Delhi"></option>
+                    <option value="West Delhi,Delhi"></option>
+                    <option value="Dadra and Nagar Haveli,Dadra and Nagar Haveli and Daman and Diu"></option>
+                    <option value="Daman,Dadra and Nagar Haveli and Daman and Diu"></option>
+                    <option value="Diu,Dadra and Nagar Haveli and Daman and Diu"></option>
+                    <option value="North Goa,Goa"></option>
+                    <option value="South Goa,Goa"></option>
+                    <option value="Ahmedabad,Gujarat"></option>
+                    <option value="Amreli,Gujarat"></option>
+                    <option value="Anand,Gujarat"></option>
+                    <option value="Aravalli,Gujarat"></option>
+                    <option value="Banaskantha,Gujarat"></option>
+                    <option value="Bharuch,Gujarat"></option>
+                    <option value="Bhavnagar,Gujarat"></option>
+                    <option value="Botad,Gujarat"></option>
+                    <option value="Chhota Udaipur,Gujarat"></option>
+                    <option value="Dahod,Gujarat"></option>
+                    <option value="Dang,Gujarat"></option>
+                    <option value="Devbhumi Dwarka,Gujarat"></option>
+                    <option value="Gandhinagar,Gujarat"></option>
+                    <option value="Gir Somnath,Gujarat"></option>
+                    <option value="Jamnagar,Gujarat"></option>
+                    <option value="Junagadh,Gujarat"></option>
+                    <option value="Kheda,Gujarat"></option>
+                    <option value="Kutch,Gujarat"></option>
+                    <option value="Mahisagar,Gujarat"></option>
+                    <option value="Mehsana,Gujarat"></option>
+                    <option value="Morbi,Gujarat"></option>
+                    <option value="Narmada,Gujarat"></option>
+                    <option value="Navsari,Gujarat"></option>
+                    <option value="Panchmahal,Gujarat"></option>
+                    <option value="Patan,Gujarat"></option>
+                    <option value="Porbandar,Gujarat"></option>
+                    <option value="Rajkot,Gujarat"></option>
+                    <option value="Sabarkantha,Gujarat"></option>
+                    <option value="Surat,Gujarat"></option>
+                    <option value="Surendranagar,Gujarat"></option>
+                    <option value="Tapi,Gujarat"></option>
+                    <option value="Vadodara,Gujarat"></option>
+                    <option value="Valsad,Gujarat"></option>
+                    <option value="Ambala,Haryana"></option>
+                    <option value="Bhiwani,Haryana"></option>
+                    <option value="Charkhi Dadri,Haryana"></option>
+                    <option value="Faridabad,Haryana"></option>
+                    <option value="Fatehabad,Haryana"></option>
+                    <option value="Gurugram,Haryana"></option>
+                    <option value="Hisar,Haryana"></option>
+                    <option value="Jhajjar,Haryana"></option>
+                    <option value="Jind,Haryana"></option>
+                    <option value="Kaithal,Haryana"></option>
+                    <option value="Karnal,Haryana"></option>
+                    <option value="Kurukshetra,Haryana"></option>
+                    <option value="Mahendragarh,Haryana"></option>
+                    <option value="Nuh,Haryana"></option>
+                    <option value="Palwal,Haryana"></option>
+                    <option value="Panchkula,Haryana"></option>
+                    <option value="Panipat,Haryana"></option>
+                    <option value="Rewari,Haryana"></option>
+                    <option value="Rohtak,Haryana"></option>
+                    <option value="Sirsa,Haryana"></option>
+                    <option value="Sonipat,Haryana"></option>
+                    <option value="Yamunanagar,Haryana"></option>
+                    <option value="Bilaspur,Himachal Pradesh"></option>
+                    <option value="Chamba,Himachal Pradesh"></option>
+                    <option value="Hamirpur,Himachal Pradesh"></option>
+                    <option value="Kangra,Himachal Pradesh"></option>
+                    <option value="Kinnaur,Himachal Pradesh"></option>
+                    <option value="Kullu,Himachal Pradesh"></option>
+                    <option value="Lahaul and Spiti,Himachal Pradesh"></option>
+                    <option value="Mandi,Himachal Pradesh"></option>
+                    <option value="Shimla,Himachal Pradesh"></option>
+                    <option value="Sirmaur,Himachal Pradesh"></option>
+                    <option value="Solan,Himachal Pradesh"></option>
+                    <option value="Una,Himachal Pradesh"></option>
+                    <option value="Anantnag,Jammu and Kashmir"></option>
+                    <option value="Bandipora,Jammu and Kashmir"></option>
+                    <option value="Baramulla,Jammu and Kashmir"></option>
+                    <option value="Budgam,Jammu and Kashmir"></option>
+                    <option value="Doda,Jammu and Kashmir"></option>
+                    <option value="Ganderbal,Jammu and Kashmir"></option>
+                    <option value="Jammu,Jammu and Kashmir"></option>
+                    <option value="Kathua,Jammu and Kashmir"></option>
+                    <option value="Kishtwar,Jammu and Kashmir"></option>
+                    <option value="Kulgam,Jammu and Kashmir"></option>
+                    <option value="Kupwara,Jammu and Kashmir"></option>
+                    <option value="Punch,Jammu and Kashmir"></option>
+                    <option value="Pulwama,Jammu and Kashmir"></option>
+                    <option value="Rajouri,Jammu and Kashmir"></option>
+                    <option value="Ramban,Jammu and Kashmir"></option>
+                    <option value="Reasi,Jammu and Kashmir"></option>
+                    <option value="Samba,Jammu and Kashmir"></option>
+                    <option value="Shopiyan,Jammu and Kashmir"></option>
+                    <option value="Srinagar,Jammu and Kashmir"></option>
+                    <option value="Udhampur,Jammu and Kashmir"></option>
+                    <option value="Bokaro,Jharkhand"></option>
+                    <option value="Chatra,Jharkhand"></option>
+                    <option value="Deoghar,Jharkhand"></option>
+                    <option value="Dhanbad,Jharkhand"></option>
+                    <option value="Dumka,Jharkhand"></option>
+                    <option value="East Singhbhum,Jharkhand"></option>
+                    <option value="Garhwa,Jharkhand"></option>
+                    <option value="Giridih,Jharkhand"></option>
+                    <option value="Godda,Jharkhand"></option>
+                    <option value="Gumla,Jharkhand"></option>
+                    <option value="Hazaribagh,Jharkhand"></option>
+                    <option value="Jamtara,Jharkhand"></option>
+                    <option value="Khunti,Jharkhand"></option>
+                    <option value="Koderma,Jharkhand"></option>
+                    <option value="Latehar,Jharkhand"></option>
+                    <option value="Lohardaga,Jharkhand"></option>
+                    <option value="Pakur,Jharkhand"></option>
+                    <option value="Palamu,Jharkhand"></option>
+                    <option value="Ramgarh,Jharkhand"></option>
+                    <option value="Ranchi,Jharkhand"></option>
+                    <option value="Sahibganj,Jharkhand"></option>
+                    <option value="Seraikela-Kharsawan,Jharkhand"></option>
+                    <option value="Simdega,Jharkhand"></option>
+                    <option value="West Singhbhum,Jharkhand"></option>
+                    <option value="Bagalkote,Karnataka"></option>
+                    <option value="Bengaluru Rural,Karnataka"></option>
+                    <option value="Bengaluru Urban,Karnataka"></option>
+                    <option value="Belgavi,Karnataka"></option>
+                    <option value="Ballari,Karnataka"></option>
+                    <option value="Bidar,Karnataka"></option>
+                    <option value="Chamarajanagara,Karnataka"></option>
+                    <option value="Chikkaballapur,Karnataka"></option>
+                    <option value="Chikkamagaluru,Karnataka"></option>
+                    <option value="Chitradurga,Karnataka"></option>
+                    <option value="Dakshina Kannada,Karnataka"></option>
+                    <option value="Davanagere,Karnataka"></option>
+                    <option value="Dharwad,Karnataka"></option>
+                    <option value="Gadag,Karnataka"></option>
+                    <option value="Hassan,Karnataka"></option>
+                    <option value="Haveri,Karnataka"></option>
+                    <option value="Kodagu,Karnataka"></option>
+                    <option value="Kolar,Karnataka"></option>
+                    <option value="Koppal,Karnataka"></option>
+                    <option value="Mandya,Karnataka"></option>
+                    <option value="Mysuru,Karnataka"></option>
+                    <option value="Raichur,Karnataka"></option>
+                    <option value="Ramanagara,Karnataka"></option>
+                    <option value="Shivamogga,Karnataka"></option>
+                    <option value="Tumakuru,Karnataka"></option>
+                    <option value="Udupi,Karnataka"></option>
+                    <option value="Uttara Kannada,Karnataka"></option>
+                    <option value="Vijayapura,Karnataka"></option>
+                    <option value="Yadgir,Karnataka"></option>
+                    <option value="Alappuzha,Kerala"></option>
+                    <option value="Ernakulam,Kerala"></option>
+                    <option value="Idukki,Kerala"></option>
+                    <option value="Kannur,Kerala"></option>
+                    <option value="Kasaragod,Kerala"></option>
+                    <option value="Kollam,Kerala"></option>
+                    <option value="Kottayam,Kerala"></option>
+                    <option value="Kozhikode,Kerala"></option>
+                    <option value="Malappuram,Kerala"></option>
+                    <option value="Palakkad,Kerala"></option>
+                    <option value="Pathanamthitta,Kerala"></option>
+                    <option value="Thiruvananthapuram,Kerala"></option>
+                    <option value="Thrissur,Kerala"></option>
+                    <option value="Wayanad,Kerala"></option>
+                    <option value="Kargil,Ladakh"></option>
+                    <option value="Leh,Ladakh"></option>
+                    <option value="Lakshadweep,Lakshadweep"></option>
+                    <option value="Agar Malwa,Madhya Pradesh"></option>
+                    <option value="Alirajpur,Madhya Pradesh"></option>
+                    <option value="Anuppur,Madhya Pradesh"></option>
+                    <option value="Ashoknagar,Madhya Pradesh"></option>
+                    <option value="Balaghat,Madhya Pradesh"></option>
+                    <option value="Barwani,Madhya Pradesh"></option>
+                    <option value="Betul,Madhya Pradesh"></option>
+                    <option value="Bhind,Madhya Pradesh"></option>
+                    <option value="Bhopal,Madhya Pradesh"></option>
+                    <option value="Burhanpur,Madhya Pradesh"></option>
+                    <option value="Chhatarpur,Madhya Pradesh"></option>
+                    <option value="Chhindwara,Madhya Pradesh"></option>
+                    <option value="Damoh,Madhya Pradesh"></option>
+                    <option value="Datia,Madhya Pradesh"></option>
+                    <option value="Dewas,Madhya Pradesh"></option>
+                    <option value="Dhar,Madhya Pradesh"></option>
+                    <option value="Dindori,Madhya Pradesh"></option>
+                    <option value="Guna,Madhya Pradesh"></option>
+                    <option value="Gwalior,Madhya Pradesh"></option>
+                    <option value="Harda,Madhya Pradesh"></option>
+                    <option value="Hoshangabad,Madhya Pradesh"></option>
+                    <option value="Indore,Madhya Pradesh"></option>
+                    <option value="Jabalpur,Madhya Pradesh"></option>
+                    <option value="Jhabua,Madhya Pradesh"></option>
+                    <option value="Katni,Madhya Pradesh"></option>
+                    <option value="Khandwa,Madhya Pradesh"></option>
+                    <option value="Khargone,Madhya Pradesh"></option>
+                    <option value="Mandla,Madhya Pradesh"></option>
+                    <option value="Mandsaur,Madhya Pradesh"></option>
+                    <option value="Morena,Madhya Pradesh"></option>
+                    <option value="Narsinghpur,Madhya Pradesh"></option>
+                    <option value="Neemuch,Madhya Pradesh"></option>
+                    <option value="Niwari,Madhya Pradesh"></option>
+                    <option value="Panna,Madhya Pradesh"></option>
+                    <option value="Raisen,Madhya Pradesh"></option>
+                    <option value="Rajgarh,Madhya Pradesh"></option>
+                    <option value="Ratlam,Madhya Pradesh"></option>
+                    <option value="Rewa,Madhya Pradesh"></option>
+                    <option value="Sagar,Madhya Pradesh"></option>
+                    <option value="Satna,Madhya Pradesh"></option>
+                    <option value="Sehore,Madhya Pradesh"></option>
+                    <option value="Seoni,Madhya Pradesh"></option>
+                    <option value="Shahdol,Madhya Pradesh"></option>
+                    <option value="Shajapur,Madhya Pradesh"></option>
+                    <option value="Sheopur,Madhya Pradesh"></option>
+                    <option value="Shivpuri,Madhya Pradesh"></option>
+                    <option value="Sidhi,Madhya Pradesh"></option>
+                    <option value="Singrauli,Madhya Pradesh"></option>
+                    <option value="Tikamgarh,Madhya Pradesh"></option>
+                    <option value="Ujjain,Madhya Pradesh"></option>
+                    <option value="Umaria,Madhya Pradesh"></option>
+                    <option value="Vidisha,Madhya Pradesh"></option>
+                    <option value="Ahmednagar,Maharashtra"></option>
+                    <option value="Akola,Maharashtra"></option>
+                    <option value="Amravati,Maharashtra"></option>
+                    <option value="Aurangabad,Maharashtra"></option>
+                    <option value="Beed,Maharashtra"></option>
+                    <option value="Bhandara,Maharashtra"></option>
+                    <option value="Buldhana,Maharashtra"></option>
+                    <option value="Chandrapur,Maharashtra"></option>
+                    <option value="Dhule,Maharashtra"></option>
+                    <option value="Gadchiroli,Maharashtra"></option>
+                    <option value="Gondia,Maharashtra"></option>
+                    <option value="Hingoli,Maharashtra"></option>
+                    <option value="Jalgaon,Maharashtra"></option>
+                    <option value="Jalna,Maharashtra"></option>
+                    <option value="Kolhapur,Maharashtra"></option>
+                    <option value="Latur,Maharashtra"></option>
+                    <option value="Mumbai,Maharashtra"></option>
+                    <option value="Mumbai Suburban,Maharashtra"></option>
+                    <option value="Nagpur,Maharashtra"></option>
+                    <option value="Nanded,Maharashtra"></option>
+                    <option value="Nandurbar,Maharashtra"></option>
+                    <option value="Nashik,Maharashtra"></option>
+                    <option value="Osmanabad,Maharashtra"></option>
+                    <option value="Palghar,Maharashtra"></option>
+                    <option value="Parbhani,Maharashtra"></option>
+                    <option value="Pune,Maharashtra"></option>
+                    <option value="Raigad,Maharashtra"></option>
+                    <option value="Ratnagiri,Maharashtra"></option>
+                    <option value="Sangli,Maharashtra"></option>
+                    <option value="Satara,Maharashtra"></option>
+                    <option value="Sindhudurg,Maharashtra"></option>
+                    <option value="Solapur,Maharashtra"></option>
+                    <option value="Thane,Maharashtra"></option>
+                    <option value="Wardha,Maharashtra"></option>
+                    <option value="Washim,Maharashtra"></option>
+                    <option value="Yavatmal,Maharashtra"></option>
+                    <option value="Bishnupur,Manipur"></option>
+                    <option value="Chandel,Manipur"></option>
+                    <option value="Churachandpur,Manipur"></option>
+                    <option value="Imphal East,Manipur"></option>
+                    <option value="Imphal West,Manipur"></option>
+                    <option value="Jiribam,Manipur"></option>
+                    <option value="Kakching,Manipur"></option>
+                    <option value="Kamjong,Manipur"></option>
+                    <option value="Kangpokpi,Manipur"></option>
+                    <option value="Noney,Manipur"></option>
+                    <option value="Pherzawl,Manipur"></option>
+                    <option value="Senapati,Manipur"></option>
+                    <option value="Tamenglong,Manipur"></option>
+                    <option value="Tengnoupal,Manipur"></option>
+                    <option value="Thoubal,Manipur"></option>
+                    <option value="Ukhrul,Manipur"></option>
+                    <option value="East Garo Hills,Meghalaya"></option>
+                    <option value="East Jaintia Hills,Meghalaya"></option>
+                    <option value="East Khasi Hills,Meghalaya"></option>
+                    <option value="North Garo Hills,Meghalaya"></option>
+                    <option value="RiBhoi,Meghalaya"></option>
+                    <option value="South Garo Hills,Meghalaya"></option>
+                    <option value="South West Garo Hills,Meghalaya"></option>
+                    <option value="South West Khasi Hills,Meghalaya"></option>
+                    <option value="West Garo Hills,Meghalaya"></option>
+                    <option value="West Jaintia Hills,Meghalaya"></option>
+                    <option value="West Khasi Hills,Meghalaya"></option>
+                    <option value="Aizawl,Mizoram"></option>
+                    <option value="Champhai,Mizoram"></option>
+                    <option value="Hnahthial,Mizoram"></option>
+                    <option value="Khawzawl,Mizoram"></option>
+                    <option value="Kolasib,Mizoram"></option>
+                    <option value="Lawngtlai,Mizoram"></option>
+                    <option value="Lunglei,Mizoram"></option>
+                    <option value="Mamit,Mizoram"></option>
+                    <option value="Saiha,Mizoram"></option>
+                    <option value="Saitual,Mizoram"></option>
+                    <option value="Serchhip,Mizoram"></option>
+                    <option value="Mon,Nagaland"></option>
+                    <option value="Dimapur,Nagaland"></option>
+                    <option value="Kiphire,Nagaland"></option>
+                    <option value="Kohima,Nagaland"></option>
+                    <option value="Longleng,Nagaland"></option>
+                    <option value="Mokokchung,Nagaland"></option>
+                    <option value="-Noklak,Nagaland"></option>
+                    <option value="Peren,Nagaland"></option>
+                    <option value="Phek,Nagaland"></option>
+                    <option value="Tuensang,Nagaland"></option>
+                    <option value="Wokha,Nagaland"></option>
+                    <option value="Zunheboto,Nagaland"></option>
+                    <option value="Angul,Odisha"></option>
+                    <option value="Balangir,Odisha"></option>
+                    <option value="Balasore,Odisha"></option>
+                    <option value="Bargarh,Odisha"></option>
+                    <option value="Bhadrak,Odisha"></option>
+                    <option value="Boudh,Odisha"></option>
+                    <option value="Cuttack,Odisha"></option>
+                    <option value="Debagarh,Odisha"></option>
+                    <option value="Dhenkanal,Odisha"></option>
+                    <option value="Gajapati,Odisha"></option>
+                    <option value="Ganjam,Odisha"></option>
+                    <option value="Jagatsinghpur,Odisha"></option>
+                    <option value="Jajpur,Odisha"></option>
+                    <option value="Jharsuguda,Odisha"></option>
+                    <option value="Kalahandi,Odisha"></option>
+                    <option value="Kandhamal,Odisha"></option>
+                    <option value="Kendrapara,Odisha"></option>
+                    <option value="Kendujhar,Odisha"></option>
+                    <option value="Khordha,Odisha"></option>
+                    <option value="Koraput,Odisha"></option>
+                    <option value="Malkangiri,Odisha"></option>
+                    <option value="Mayurbhanj,Odisha"></option>
+                    <option value="Nabarangpur,Odisha"></option>
+                    <option value="Nayagarh,Odisha"></option>
+                    <option value="Nuapada,Odisha"></option>
+                    <option value="Puri,Odisha"></option>
+                    <option value="Rayagada,Odisha"></option>
+                    <option value="Sambalpur,Odisha"></option>
+                    <option value="Subarnapur,Odisha"></option>
+                    <option value="Sundargarh,Odisha"></option>
+                    <option value="Amritsar,Punjab"></option>
+                    <option value="Barnala,Punjab"></option>
+                    <option value="Bathinda,Punjab"></option>
+                    <option value="Faridkot,Punjab"></option>
+                    <option value="Fatehgarh Sahib,Punjab"></option>
+                    <option value="Fazilka,Punjab"></option>
+                    <option value="Firozpur,Punjab"></option>
+                    <option value="Gurdaspur,Punjab"></option>
+                    <option value="Hoshiarpur,Punjab"></option>
+                    <option value="Jalandhar,Punjab"></option>
+                    <option value="Kapurthala,Punjab"></option>
+                    <option value="Ludhiana,Punjab"></option>
+                    <option value="Mansa,Punjab"></option>
+                    <option value="Moga,Punjab"></option>
+                    <option value="Pathankot,Punjab"></option>
+                    <option value="Patiala,Punjab"></option>
+                    <option value="Rupnagar,Punjab"></option>
+                    <option value="S.A.S. Nagar,Punjab"></option>
+                    <option value="Sangrur,Punjab"></option>
+                    <option value="Shahid Bhagat Singh Nagar,Punjab"></option>
+                    <option value="Tarn Taran,Punjab"></option>
+                    <option value="Karaikal,Puducherry"></option>
+                    <option value="Mahe,Puducherry"></option>
+                    <option value="Puducherry,Puducherry"></option>
+                    <option value="Yanam,Puducherry"></option>
+                    <option value="Ajmer,Rajasthan"></option>
+                    <option value="Alwar,Rajasthan"></option>
+                    <option value="Banswara,Rajasthan"></option>
+                    <option value="Baran,Rajasthan"></option>
+                    <option value="Barmer,Rajasthan"></option>
+                    <option value="Bharatpur,Rajasthan"></option>
+                    <option value="Bhilwara,Rajasthan"></option>
+                    <option value="Bikaner,Rajasthan"></option>
+                    <option value="Bundi,Rajasthan"></option>
+                    <option value="Chittorgarh,Rajasthan"></option>
+                    <option value="Churu,Rajasthan"></option>
+                    <option value="Dausa,Rajasthan"></option>
+                    <option value="Dholpur,Rajasthan"></option>
+                    <option value="Dungarpur,Rajasthan"></option>
+                    <option value="Ganganagar,Rajasthan"></option>
+                    <option value="Hanumangarh,Rajasthan"></option>
+                    <option value="Jaipur,Rajasthan"></option>
+                    <option value="Jaisalmer,Rajasthan"></option>
+                    <option value="Jalore,Rajasthan"></option>
+                    <option value="Jhalawar,Rajasthan"></option>
+                    <option value="Jhunjhunu,Rajasthan"></option>
+                    <option value="Jodhpur,Rajasthan"></option>
+                    <option value="Karauli,Rajasthan"></option>
+                    <option value="Kota,Rajasthan"></option>
+                    <option value="Nagaur,Rajasthan"></option>
+                    <option value="Pali,Rajasthan"></option>
+                    <option value="Pratapgarh,Rajasthan"></option>
+                    <option value="Rajsamand,Rajasthan"></option>
+                    <option value="Sawai Madhopur,Rajasthan"></option>
+                    <option value="Sikar,Rajasthan"></option>
+                    <option value="Sirohi,Rajasthan"></option>
+                    <option value="Tonk,Rajasthan"></option>
+                    <option value="Udaipur,Rajasthan"></option>
+                    <option value="East Sikkim,Sikkim"></option>
+                    <option value="North Sikkim,Sikkim"></option>
+                    <option value="South Sikkim,Sikkim"></option>
+                    <option value="West Sikkim,Sikkim"></option>
+                    <option value="Ariyalur,Tamil Nadu"></option>
+                    <option value="Chengalpattu,Tamil Nadu"></option>
+                    <option value="Chennai,Tamil Nadu"></option>
+                    <option value="Coimbatore,Tamil Nadu"></option>
+                    <option value="Cuddalore,Tamil Nadu"></option>
+                    <option value="Dharmapuri,Tamil Nadu"></option>
+                    <option value="Dindigul,Tamil Nadu"></option>
+                    <option value="Erode,Tamil Nadu"></option>
+                    <option value="Kallakurichi,Tamil Nadu"></option>
+                    <option value="Kancheepuram,Tamil Nadu"></option>
+                    <option value="Kanyakumari,Tamil Nadu"></option>
+                    <option value="Karur,Tamil Nadu"></option>
+                    <option value="Krishnagiri,Tamil Nadu"></option>
+                    <option value="Madurai,Tamil Nadu"></option>
+                    <option value="Nagapattinam,Tamil Nadu"></option>
+                    <option value="Namakkal,Tamil Nadu"></option>
+                    <option value="Nilgiris,Tamil Nadu"></option>
+                    <option value="Perambalur,Tamil Nadu"></option>
+                    <option value="Pudukkottai,Tamil Nadu"></option>
+                    <option value="Ramanathapuram,Tamil Nadu"></option>
+                    <option value="Ranipet,Tamil Nadu"></option>
+                    <option value="Salem,Tamil Nadu"></option>
+                    <option value="Sivaganga,Tamil Nadu"></option>
+                    <option value="Tenkasi,Tamil Nadu"></option>
+                    <option value="Thanjavur,Tamil Nadu"></option>
+                    <option value="Theni,Tamil Nadu"></option>
+                    <option value="Thiruvallur,Tamil Nadu"></option>
+                    <option value="Thiruvarur,Tamil Nadu"></option>
+                    <option value="Thoothukkudi,Tamil Nadu"></option>
+                    <option value="Tiruchirappalli,Tamil Nadu"></option>
+                    <option value="Tirunelveli,Tamil Nadu"></option>
+                    <option value="Tirupattur,Tamil Nadu"></option>
+                    <option value="Tiruppur,Tamil Nadu"></option>
+                    <option value="Tiruvannamalai,Tamil Nadu"></option>
+                    <option value="Vellore,Tamil Nadu"></option>
+                    <option value="Viluppuram,Tamil Nadu"></option>
+                    <option value="Virudhunagar,Tamil Nadu"></option>
+                    <option value="Adilabad,Telangana"></option>
+                    <option value="Bhadradri Kothagudem,Telangana"></option>
+                    <option value="Hyderabad,Telangana"></option>
+                    <option value="Jagtial,Telangana"></option>
+                    <option value="Jangaon,Telangana"></option>
+                    <option value="Jayashankar Bhupalpally,Telangana"></option>
+                    <option value="Jogulamba Gadwal,Telangana"></option>
+                    <option value="Kamareddy,Telangana"></option>
+                    <option value="Karimnagar,Telangana"></option>
+                    <option value="Khammam,Telangana"></option>
+                    <option value="Komaram Bheem,Telangana"></option>
+                    <option value="Mahabubabad,Telangana"></option>
+                    <option value="Mahabubnagar,Telangana"></option>
+                    <option value="Mancherial,Telangana"></option>
+                    <option value="Medak,Telangana"></option>
+                    <option value="Medchal Malkajgiri,Telangana"></option>
+                    <option value="Mulugu,Telangana"></option>
+                    <option value="Nagarkurnool,Telangana"></option>
+                    <option value="Nalgonda,Telangana"></option>
+                    <option value="Narayanpet,Telangana"></option>
+                    <option value="Nirmal,Telangana"></option>
+                    <option value="Nizamabad,Telangana"></option>
+                    <option value="Peddapalli,Telangana"></option>
+                    <option value="Rajanna Sircilla,Telangana"></option>
+                    <option value="Ranga Reddy,Telangana"></option>
+                    <option value="Sangareddy,Telangana"></option>
+                    <option value="Siddipet,Telangana"></option>
+                    <option value="Suryapet,Telangana"></option>
+                    <option value="Vikarabad,Telangana"></option>
+                    <option value="Wanaparthy,Telangana"></option>
+                    <option value="Warangal Rural,Telangana"></option>
+                    <option value="Warangal Urban,Telangana"></option>
+                    <option value="Yadadri Bhuvanagiri,Telangana"></option>
+                    <option value="Dhalai,Tripura"></option>
+                    <option value="Gomati,Tripura"></option>
+                    <option value="Khowai,Tripura"></option>
+                    <option value="North Tripura,Tripura"></option>
+                    <option value="Sepahijala,Tripura"></option>
+                    <option value="South Tripura,Tripura"></option>
+                    <option value="Unakoti,Tripura"></option>
+                    <option value="West Tripura,Tripura"></option>
+                    <option value="Agra,Uttar Pradesh"></option>
+                    <option value="Aligarh,Uttar Pradesh"></option>
+                    <option value="Prayagraj,Uttar Pradesh"></option>
+                    <option value="Ambedkar Nagar,Uttar Pradesh"></option>
+                    <option value="Amethi,Uttar Pradesh"></option>
+                    <option value="Amroha,Uttar Pradesh"></option>
+                    <option value="Auraiya,Uttar Pradesh"></option>
+                    <option value="Ayodhya,Uttar Pradesh"></option>
+                    <option value="Azamgarh,Uttar Pradesh"></option>
+                    <option value="Baghpat,Uttar Pradesh"></option>
+                    <option value="Bahraich,Uttar Pradesh"></option>
+                    <option value="Ballia,Uttar Pradesh"></option>
+                    <option value="Balrampur,Uttar Pradesh"></option>
+                    <option value="Banda,Uttar Pradesh"></option>
+                    <option value="Barabanki,Uttar Pradesh"></option>
+                    <option value="Bareilly,Uttar Pradesh"></option>
+                    <option value="Basti,Uttar Pradesh"></option>
+                    <option value="Bhadohi,Uttar Pradesh"></option>
+                    <option value="Bijnor,Uttar Pradesh"></option>
+                    <option value="Budaun,Uttar Pradesh"></option>
+                    <option value="Bulandshahr,Uttar Pradesh"></option>
+                    <option value="Chandauli,Uttar Pradesh"></option>
+                    <option value="Chitrakoot,Uttar Pradesh"></option>
+                    <option value="Deoria,Uttar Pradesh"></option>
+                    <option value="Etah,Uttar Pradesh"></option>
+                    <option value="Etawah,Uttar Pradesh"></option>
+                    <option value="Farrukhabad,Uttar Pradesh"></option>
+                    <option value="Fatehpur,Uttar Pradesh"></option>
+                    <option value="Firozabad,Uttar Pradesh"></option>
+                    <option value="Gautam Buddha Nagar,Uttar Pradesh"></option>
+                    <option value="Ghaziabad,Uttar Pradesh"></option>
+                    <option value="Ghazipur,Uttar Pradesh"></option>
+                    <option value="Gonda,Uttar Pradesh"></option>
+                    <option value="Gorakhpur,Uttar Pradesh"></option>
+                    <option value="Hamirpur,Uttar Pradesh"></option>
+                    <option value="Hapur,Uttar Pradesh"></option>
+                    <option value="Hardoi,Uttar Pradesh"></option>
+                    <option value="Hathras,Uttar Pradesh"></option>
+                    <option value="Jalaun,Uttar Pradesh"></option>
+                    <option value="Jaunpur,Uttar Pradesh"></option>
+                    <option value="Jhansi,Uttar Pradesh"></option>
+                    <option value="Kannauj,Uttar Pradesh"></option>
+                    <option value="Kanpur Dehat,Uttar Pradesh"></option>
+                    <option value="Kanpur Nagar,Uttar Pradesh"></option>
+                    <option value="Kasganj,Uttar Pradesh"></option>
+                    <option value="Kaushambi,Uttar Pradesh"></option>
+                    <option value="lakhimpur Kheri,Uttar Pradesh"></option>
+                    <option value="Kushinagar,Uttar Pradesh"></option>
+                    <option value="Lalitpur,Uttar Pradesh"></option>
+                    <option value="Lucknow,Uttar Pradesh"></option>
+                    <option value="Maharajganj,Uttar Pradesh"></option>
+                    <option value="Mahoba,Uttar Pradesh"></option>
+                    <option value="Mainpuri,Uttar Pradesh"></option>
+                    <option value="Mathura,Uttar Pradesh"></option>
+                    <option value="Mau,Uttar Pradesh"></option>
+                    <option value="Meerut,Uttar Pradesh"></option>
+                    <option value="Mirzapur,Uttar Pradesh"></option>
+                    <option value="Moradabad,Uttar Pradesh"></option>
+                    <option value="Muzaffarnagar,Uttar Pradesh"></option>
+                    <option value="Pilibhit,Uttar Pradesh"></option>
+                    <option value="Pratapgarh,Uttar Pradesh"></option>
+                    <option value="Raebareli,Uttar Pradesh"></option>
+                    <option value="Rampur,Uttar Pradesh"></option>
+                    <option value="Saharanpur,Uttar Pradesh"></option>
+                    <option value="Sambhal,Uttar Pradesh"></option>
+                    <option value="Sant Kabir Nagar,Uttar Pradesh"></option>
+                    <option value="Shahjahanpur,Uttar Pradesh"></option>"></option>
+                    <option value="Shamli,Uttar Pradesh"></option>
+                    <option value="Shrawasti,Uttar Pradesh"></option>
+                    <option value="Siddharthnagar,Uttar Pradesh"></option>
+                    <option value="Sitapur,Uttar Pradesh"></option>
+                    <option value="Sonbhadra,Uttar Pradesh"></option>
+                    <option value="Sultanpur,Uttar Pradesh"></option>
+                    <option value="Unnao,Uttar Pradesh"></option>
+                    <option value="Varanasi,Uttar Pradesh"></option>
+                    <option value="Almora,Uttarakhand"></option>
+                    <option value="Bageshwar,Uttarakhand"></option>
+                    <option value="Chamoli,Uttarakhand"></option>
+                    <option value="Champawat,Uttarakhand"></option>
+                    <option value="Dehradun,Uttarakhand"></option>
+                    <option value="Haridwar,Uttarakhand"></option>
+                    <option value="Nainital,Uttarakhand"></option>
+                    <option value="Pauri Garhwal,Uttarakhand"></option>
+                    <option value="Pithoragarh,Uttarakhand"></option>
+                    <option value="Rudraprayag,Uttarakhand"></option>
+                    <option value="Tehri Garhwal,Uttarakhand"></option>
+                    <option value="Udham Singh Nagar,Uttarakhand"></option>
+                    <option value="Uttarkashi,Uttarakhand"></option>
+                    <option value="Alipurduar,West Bengal"></option>
+                    <option value="Bankura,West Bengal"></option>
+                    <option value="Birbhum,West Bengal"></option>
+                    <option value="Cooch Behar,West Bengal"></option>
+                    <option value="Dakshin Dinajpur,West Bengal"></option>
+                    <option value="Darjeeling,West Bengal"></option>
+                    <option value="Hooghly,West Bengal"></option>
+                    <option value="Howrah,West Bengal"></option>
+                    <option value="Jalpaiguri,West Bengal"></option>
+                    <option value="Jhargram,West Bengal"></option>
+                    <option value="Kalimpong,West Bengal"></option>
+                    <option value="Kolkata,West Bengal"></option>
+                    <option value="Malda,West Bengal"></option>
+                    <option value="Murshidabad,West Bengal"></option>
+                    <option value="Nadia,West Bengal"></option>
+                    <option value="North 24 Parganas,West Bengal"></option>
+                    <option value="Paschim Bardhaman,West Bengal"></option>
+                    <option value="Paschim Medinipur,West Bengal"></option>
+                    <option value="Purba Bardhaman,West Bengal"></option>
+                    <option value="Purba Medinipur,West Bengal"></option>
+                    <option value="Purulia,West Bengal"></option>
+                    <option value="South 24 Parganas,West Bengal"></option>
+                    <option value="Uttar Dinajpur,West Bengal"></option>
+                    <!-- This data list will be edited through javascript     -->
+                    </datalist>
+
+
+                <div class="input-group-append">
+                    
+                      <button class="btn btn-lg btn-secondary"  id="button-addon2">Search</button>
+                    
+                </div>
+              </div>
+            </form>
+            <div class="alert  alert-dismissible fade" role="alert">
+                <strong><%=inputname%></strong> is not exist or invalid,please check out the given suggestion list... 
+                <button type="button" class="close" onclick="hider()"     data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                    <div class="media tm-bg-transparent-black tm-border-white">
+                        <i class="fas fa-procedures tm-icon-circled tm-icon-media"></i>
+                        <div class="media-body">
+                            <h3>Confrimed:</h3>
+                            <h3><%=confirmeddist%>[+<%=todayconfirmeddist%>]</h3>
+                        </div>
+                    </div>
+                </div>	
+                <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                    <div class="media tm-bg-transparent-black tm-border-white">
+                        <i class="fas fa-stethoscope mr-4 tm-icon-circled tm-icon-media"></i>	
+                        <div class="media-body">
+                            <h3>Recovered:</h3>
+                            <h3><%=recovereddist%> [+<%=todayrecovereddist%>]</h3>	
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                    <div class="media tm-bg-transparent-black tm-border-white">
+                        <i class="fas fa-skull-crossbones mr-4 tm-icon-circled tm-icon-media"></i>
+                        <div class="media-body">
+                            <h3>Death:</h3>
+                            <h3><%=deathdist%>[+<%=todaydeathdist%>]</h3>		
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+                    <div class="media tm-bg-transparent-black tm-border-white">
+                        <i class="fas fa-percent mr-4 tm-icon-circled tm-icon-media"></i>
+                        <div class="media-body">
+                            <h3>Recovery Rate:</h3>
+                            <h3><%=rpdist%>%</h3>	
+                            
+                        </div>
+                    </div>
+                </div>
+                <h6 class="mb-4">Last update: <%=updateon%></h6>				          		
+            </div>         
+        </section>
+    </div>	<!-- .tm-content -->							
+    <footer class="footer-link">
+        <p class="tm-copyright-text">Copyright &copy; 2020 Debanshu Rout
+        
+        - Design:DR</p>
+    </footer>
+    </div>	<!-- row -->			
+    </div>
+    <div id="preload-01"></div>
+    <div id="preload-02"></div>
+    <div id="preload-03"></div>
+    <div id="preload-04"></div>
+    
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script> <!-- Slick Carousel -->
+    
+    <script>
+    
+    var sidebarVisible = false;
+    var currentPageID = "#tm-section-3";
+    
+    function hider()
+	{
+		  $(".alert").removeClass("show");
+	}
+    //Setup Carousel
+    function setupCarousel() {
+    
+    // If current page isn't Carousel page, don't do anything.
+    if($('#tm-section-2').css('display') == "none") {
+    }
+    else {	// If current page is Carousel page, set up the Carousel.
+    
+    var slider = $('.tm-img-slider');
+    var windowWidth = $(window).width();
+    
+    if (slider.hasClass('slick-initialized')) {
+        slider.slick('destroy');
+    }
+    
+    if(windowWidth < 640) {
+        slider.slick({
+              dots: true,
+              infinite: false,
+              slidesToShow: 1,
+              slidesToScroll: 1
+          });
+    }
+    else if(windowWidth < 992) {
+        slider.slick({
+              dots: true,
+              infinite: false,
+              slidesToShow: 2,
+              slidesToScroll: 1
+          });
+    }
+    else {
+        // Slick carousel
+          slider.slick({
+              dots: true,
+              infinite: false,
+              slidesToShow: 3,
+              slidesToScroll: 2
+          });
+    }
+    
+    // Init Magnific Popup
+    $('.tm-img-slider').magnificPopup({
+      delegate: 'a', // child items selector, by clicking on it popup will open
+      type: 'image',
+      gallery: {enabled:true}
+      // other options
+    });
+    }
+    }
+    
+    // Setup Nav
+    function setupNav() {
+    // Hide the nav on mobile
+    $("#tmSideBar").removeClass("show");	    
+    }
+    
+    
+    // Setup Nav Toggle Button
+    function setupNavToggle() {
+    
+    $("#tmMainNavToggle").on("click", function(){
+    $(".sidebar").toggleClass("show");
+    });
+    }
+    
+    // If there is enough room, stick the footer at the bottom of page content.
+    // If not, place it after the page content
+    function setupFooter() {
+    
+    var padding = 100;
+    var footerPadding = 40;
+    var mainContent = $("section"+currentPageID);
+    var mainContentHeight = mainContent.outerHeight(true);
+    var footer = $(".footer-link");
+    var footerHeight = footer.outerHeight(true);
+    var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+    var windowHeight = $(window).height();		
+    
+    if(totalPageHeight > windowHeight){
+      $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+      footer.css("bottom", footerHeight + "px");  			
+    }
+    else {
+      $(".tm-content").css("margin-bottom", "0");
+      footer.css("bottom", "20px");  				
+    }  			
+    }
+    
+    // Everything is loaded including images.
+    $(window).on("load", function(){
+    
+        var er="<%=error%>";
+					if(er==="true")
+					{
+						$(".alert").addClass("alert-warning show");				
+					}
+    // Render the page on modern browser only.
+    if(renderPage) {
+    // Remove loader
+      $('body').addClass('loaded');
+    
+      // Page transition
+      var allPages = $(".tm-section");
+    
+      // Handle click of "Continue", which changes to next page
+      // The link contains data-nav-link attribute, which holds the nav item ID
+      // Nav item ID is then used to access and trigger click on the corresponding nav item
+      var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+    
+    if(linkToAnotherPage != null) {
+        
+        linkToAnotherPage.on("click", function(){
+            var navItemToHighlight = linkToAnotherPage.data("navLink");
+            $("a" + navItemToHighlight).click();
+        });
+    }
+      
+      // Hide all pages
+      allPages.hide();
+    
+      $("#tm-section-3").fadeIn();
+    
+     // Set up background first page
+     var bgImg = $("#tmNavLink3").data("bgImg");
+     
+     $.backstretch("img/constructive_bg_02.jpg", {fade: 500});
+    
+     // Setup Carousel, Nav, and Nav Toggle
+    setupCarousel();
+    setupNav();
+    setupNavToggle();
+    setupFooter();
+    
+    // Resize Carousel upon window resize
+    $(window).resize(function() {
+        setupCarousel();
+        setupFooter();
+    });
+    }	      	
+    });
+    
+    </script>
+    </body>
+    <script>
+        if ('serviceWorker' in navigator) {
+           console.log("Will the service worker register?");
+           navigator.serviceWorker.register('service-worker.js')
+             .then(function(reg){
+               console.log("Yes, it did.");
+            }).catch(function(err) {
+               console.log("No it didn't. This happened:", err)
+           });
+        }
+       </script>
+    </html>
