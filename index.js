@@ -4,6 +4,7 @@ const cheerio=require("cheerio");
 const bodyparser=require("body-parser");
 const axios=require('axios');
 const https=require("https");
+const cors = require("cors");
 
 
 
