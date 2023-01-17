@@ -9,10 +9,11 @@ const cors = require("cors");
 
 
 const app=express();
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended:true}));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 
 // const linkstate={andamanandnicobarislands:"&mid=%2Fm%2F0cvvc",andhrapradesh:"&mid=%2Fm%2F0yyh",arunachanm",gujarat:"&mid=%2Fm%2F0f1_p",haryana:"&mid=%2Fm%2F03p7r",himachalpradesh:"&mid=%2Fm%2F03p85",jharkhand:"&mid=%2Fm%2F01c0h6",karnataka:"&mid=%2Fm%2F049lr",kerala:"&mid=%2Fm%2F0byh8j",ladakh:"&mid=%2Fm%2F01s6cy",lakshadweep:"&mid=%2Fm%2F0762fj",madhyapradesh:"&mid=%2Fm%2F0cw4l",maharashtra:"&mid=%2Fm%2F055vr",manipur:"&mid=%2Fm%2F0lpradesh:"&mid=%2Fm%2F018ckn",assam:"&mid=%2Fm%2F019fm7",bihar:"&mid=%2Fm%2F0290rb",chandigarh:"&mid=%2Fg%2F113qblgyk",chhattisgarh:"&mid=%2Fm%2F0cv2m",delhi:"&mid=%2Fm%2F09f07",goa:"&mid=%2Fm%2F01c26mx4",meghalaya:"&mid=%2Fm%2F01w4d3",mizoram:"&mid=%2Fm%2F02c9x5",nagaland:"&mid=%2Fm%2F024spd",odisha:"&mid=%2Fm%2F01l69g",puducherry:"&mid=%2Fm%2F0hvc8",punjab:"&mid=%2Fm%2F075_t2",rajasthan:"&mid=%2Fm%2F06k5_",sikkim:"&mid=%2Fm%2F011hq1",tamilnadu:"&mid=%2Fm%2F07c98",telangana:"&mid=%2Fm%2F03x5nf",tripura:"&mid=%2Fm%2F01v8wq",uttarpradesh:"&mid=%2Fm%2F01hpnh",uttarakhand:"&mid=%2Fm%2F050tt8",westbengal:"&mid=%2Fm%2F086g2",jammuandkashmir:"&mid=%2Fm%2F0djgt",india:"&mid=%2Fm%2F03rk0"};
 
