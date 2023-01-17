@@ -9,6 +9,7 @@ const cors = require("cors");
 
 
 const app=express();
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({extended:true}));
