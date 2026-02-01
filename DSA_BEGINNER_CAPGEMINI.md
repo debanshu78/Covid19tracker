@@ -11,8 +11,9 @@
 4. [Sorting](#4-sorting)
 5. [Stack & Queue](#5-stack--queue)
 6. [Recursion](#6-recursion)
-7. [7-Day Study Plan](#7-day-study-plan)
-8. [Interview Tips](#interview-tips)
+7. [Capgemini Coding Exam Questions](#7-capgemini-coding-exam-questions)
+8. [7-Day Study Plan](#7-day-study-plan)
+9. [Interview Tips](#interview-tips)
 
 **Quick Jump to Common Interview Questions:**
 - [Swap Two Numbers](#q16-swap-two-numbers)
@@ -2284,6 +2285,404 @@ int main() {
 
 **Interview Answer:**
 > "This is a classic recursion example. Base case: sum(0) = 0. Recursive case: sum(n) = n + sum(n-1). The function adds current number to the sum of previous numbers."
+
+---
+
+## 7. CAPGEMINI CODING EXAM QUESTIONS
+
+This section contains **actual Capgemini coding exam style questions** with complete solutions and detailed explanations.
+
+### 📝 Questions Covered:
+- [Q1: Palindrome Formation (K-Step Reachability)](#q1-palindrome-formation-k-step-reachability)
+- [Q2: String Transformation (Minimum Operations)](#q2-string-transformation-minimum-operations)
+
+---
+
+### Q1: Palindrome Formation (K-Step Reachability)
+
+**Problem Statement:**
+Given an array of N integers and a value K, count how many numbers in the array can become palindromes by adding or subtracting at most K from them.
+
+**Input Format:**
+```
+N K
+A[0] A[1] ... A[N-1]
+```
+
+**Example:**
+```
+Input:
+5 10
+121 123 133 142 151
+
+Output: 3
+
+Explanation:
+- 121: Already palindrome ✓
+- 123: 121 is reachable (123-2), 131 is reachable (123+8) ✓
+- 133: 131 is reachable (133-2) ✓
+- 142: Cannot reach any palindrome within 10 steps ✗
+- 151: Already palindrome ✓
+
+Count = 4 (121, 123, 133, 151)
+```
+
+**Logic Breakdown:**
+
+1. **Check if number is already palindrome**
+   - Reverse the number
+   - Compare with original
+
+2. **Check K positions on both sides**
+   - For each i from 1 to K:
+     - Check if (x + i) is palindrome
+     - Check if (x - i) is palindrome (if non-negative)
+   - If any is palindrome, number is reachable
+
+3. **Count all reachable numbers**
+
+**Complete Code with Explanation:**
+
+```c
+#include <stdio.h>
+
+// Function to check if a number is palindrome
+int isPalindrome(int x) {
+    int rev = 0, temp = x;
+    
+    // Reverse the number
+    while (temp > 0) {
+        rev = rev * 10 + (temp % 10);  // Extract last digit and add to reversed
+        temp /= 10;                     // Remove last digit
+    }
+    
+    // Check if reversed equals original
+    return rev == x;
+}
+
+// Function to check if number can become palindrome within K steps
+int canBecomePalindrome(int x, int K) {
+    // Check if already palindrome
+    if (isPalindrome(x)) return 1;
+
+    // Try adding or subtracting values from 1 to K
+    for (int i = 1; i <= K; i++) {
+        // Check x + i
+        if (isPalindrome(x + i)) 
+            return 1;
+        
+        // Check x - i (only if non-negative)
+        if (x - i >= 0 && isPalindrome(x - i))
+            return 1;
+    }
+    
+    // No palindrome found within K steps
+    return 0;
+}
+
+int main() {
+    int N, K;
+    scanf("%d %d", &N, &K);
+
+    int A[1000];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    int count = 0;
+    for (int i = 0; i < N; i++) {
+        if (canBecomePalindrome(A[i], K))
+            count++;
+    }
+
+    printf("%d\n", count);
+    return 0;
+}
+```
+
+**Dry Run Example:**
+```
+Input: N=3, K=5
+Array: [120, 125, 140]
+
+Processing 120:
+- isPalindrome(120)? 021 ≠ 120, No
+- Loop i=1 to 5:
+  i=1: isPalindrome(121)? Yes! → count=1
+
+Processing 125:
+- isPalindrome(125)? 521 ≠ 125, No
+- Loop i=1 to 5:
+  i=1: isPalindrome(126)? No, isPalindrome(124)? No
+  i=2: isPalindrome(127)? No, isPalindrome(123)? No
+  i=3: isPalindrome(128)? No, isPalindrome(122)? No
+  i=4: isPalindrome(129)? No, isPalindrome(121)? Yes! → count=2
+
+Processing 140:
+- isPalindrome(140)? 041 ≠ 140, No
+- Loop i=1 to 5:
+  i=1: isPalindrome(141)? Yes! → count=3
+
+Output: 3
+```
+
+**Time Complexity:** O(N × K × log(max_value))
+- N: number of elements
+- K: steps to check
+- log(max_value): digits in number for palindrome check
+
+**Space Complexity:** O(1)
+
+**Interview Answer:**
+> "This problem tests palindrome checking combined with range searching. I first check if the number is already a palindrome by reversing it. Then I check all numbers within K distance (both +K and -K) to see if any of them is a palindrome. For each array element, I perform this check and count how many can reach a palindrome within K steps. The key optimization is checking both directions and stopping early when a palindrome is found."
+
+---
+
+### Q2: String Transformation (Minimum Operations)
+
+**Problem Statement:**
+Given two strings X and Y of length N (containing only lowercase letters), answer Q queries. For each query with range [L, R], find the minimum number of character replacements needed to make substring X[L...R] an anagram of Y[L...R].
+
+**Input Format:**
+```
+N Q
+X (string of length N)
+Y (string of length N)
+Q queries: L R (1-indexed)
+```
+
+**Example:**
+```
+Input:
+5 2
+abcde
+abedc
+1 5
+2 4
+
+Output:
+2
+1
+
+Explanation:
+Query 1 (1 to 5): 
+  X = "abcde", Y = "abedc"
+  Character counts:
+    X: a=1, b=1, c=1, d=1, e=1
+    Y: a=1, b=1, c=1, d=1, e=1
+  All characters match, operations = 0
+
+Query 2 (2 to 4):
+  X = "bcd", Y = "bed"
+  Character counts:
+    X: b=1, c=1, d=1
+    Y: b=1, d=1, e=1
+  Difference: c=1 (extra in X), e=1 (extra in Y)
+  Total difference = 2, operations = 2/2 = 1
+```
+
+**Logic Breakdown:**
+
+1. **Prefix Sum Array Technique**
+   - Build cumulative frequency arrays for both strings
+   - px[c][i] = count of character 'c' in X[0...i]
+   - py[c][i] = count of character 'c' in Y[0...i]
+
+2. **For each query [L, R]:**
+   - Calculate frequency of each character in range
+   - fx[c] = px[c][R] - px[c][L-1]
+   - fy[c] = py[c][R] - py[c][L-1]
+
+3. **Count mismatches:**
+   - For each character, find |fx[c] - fy[c]|
+   - Sum all differences and divide by 2
+   - (Divide by 2 because each replacement fixes 2 mismatches)
+
+**Complete Code with Explanation:**
+
+```c
+#include <stdio.h>
+
+#define MAXN 200005
+
+// Prefix count arrays for 26 lowercase letters
+// px[c][i] = count of character 'c' in X[0...i-1]
+unsigned short px[26][MAXN];
+unsigned short py[26][MAXN];
+
+int main() {
+    int n, q;
+    scanf("%d %d", &n, &q);
+
+    char X[MAXN], Y[MAXN];
+    scanf("%s", X);
+    scanf("%s", Y);
+
+    // Initialize prefix arrays with 0
+    for (int c = 0; c < 26; c++) {
+        px[c][0] = py[c][0] = 0;
+    }
+
+    // Build prefix sum arrays
+    // px[c][i] = count of character c in X[0...i-1]
+    for (int i = 1; i <= n; i++) {
+        // Copy previous counts
+        for (int c = 0; c < 26; c++) {
+            px[c][i] = px[c][i - 1];
+            py[c][i] = py[c][i - 1];
+        }
+        
+        // Increment count for current character
+        px[X[i - 1] - 'a'][i]++;  // Convert 'a'-'z' to 0-25
+        py[Y[i - 1] - 'a'][i]++;
+    }
+
+    // Process queries
+    while (q--) {
+        int L, R;
+        scanf("%d %d", &L, &R);
+
+        int ops = 0;
+        
+        // For each character a-z
+        for (int c = 0; c < 26; c++) {
+            // Count of character c in X[L...R]
+            int fx = px[c][R] - px[c][L - 1];
+            
+            // Count of character c in Y[L...R]
+            int fy = py[c][R] - py[c][L - 1];
+            
+            // Add absolute difference
+            ops += (fx > fy) ? (fx - fy) : (fy - fx);
+        }
+
+        // Divide by 2 (each operation fixes 2 mismatches)
+        printf("%d\n", ops / 2);
+    }
+
+    return 0;
+}
+```
+
+**Dry Run Example:**
+```
+Input:
+6 2
+abcabc
+cbacba
+1 3
+2 5
+
+Building Prefix Arrays:
+X = "abcabc"
+Y = "cbacba"
+
+For 'a' (c=0):
+px[0]: [0, 1, 1, 1, 2, 2, 2]  (positions where 'a' appears)
+py[0]: [0, 0, 0, 1, 1, 1, 2]
+
+For 'b' (c=1):
+px[1]: [0, 0, 1, 1, 1, 2, 2]
+py[1]: [0, 0, 1, 1, 1, 2, 2]
+
+For 'c' (c=2):
+px[2]: [0, 0, 0, 1, 1, 1, 2]
+py[2]: [0, 1, 1, 1, 2, 2, 2]
+
+Query 1: L=1, R=3
+X[1..3] = "abc"
+Y[1..3] = "cba"
+
+For c=0 ('a'): fx = px[0][3] - px[0][0] = 1-0 = 1
+               fy = py[0][3] - py[0][0] = 1-0 = 1
+               diff = |1-1| = 0
+
+For c=1 ('b'): fx = px[1][3] - px[1][0] = 1-0 = 1
+               fy = py[1][3] - py[1][0] = 1-0 = 1
+               diff = |1-1| = 0
+
+For c=2 ('c'): fx = px[2][3] - px[2][0] = 1-0 = 1
+               fy = py[2][3] - py[2][0] = 1-0 = 1
+               diff = |1-1| = 0
+
+ops = 0/2 = 0
+
+Query 2: L=2, R=5
+X[2..5] = "bcab"
+Y[2..5] = "bacb"
+
+For c=0 ('a'): fx = 1, fy = 1, diff = 0
+For c=1 ('b'): fx = 2, fy = 2, diff = 0
+For c=2 ('c'): fx = 1, fy = 1, diff = 0
+
+ops = 0/2 = 0
+```
+
+**Time Complexity:** 
+- Preprocessing: O(26 × N) = O(N)
+- Per Query: O(26) = O(1)
+- Total: O(N + Q)
+
+**Space Complexity:** O(26 × N) = O(N)
+
+**Key Optimization:**
+Using prefix sum arrays allows us to answer each query in O(1) time instead of O(N) by precomputing cumulative character counts.
+
+**Interview Answer:**
+> "This is a range query optimization problem. Instead of counting characters for each query (which would be O(N) per query), I use prefix sum arrays to store cumulative character frequencies. For any range [L, R], I can get the character count in O(1) by subtracting prefix sums: count[L...R] = prefix[R] - prefix[L-1]. To find minimum operations, I calculate the frequency difference for each character between the two strings and sum them up. Since each replacement operation fixes one character in both strings, I divide the total difference by 2. This technique is crucial for handling multiple queries efficiently."
+
+---
+
+### 🎯 Key Concepts Tested in Capgemini Coding Exams:
+
+1. **String Manipulation**
+   - Character frequency counting
+   - Substring operations
+   - Anagrams and palindromes
+
+2. **Optimization Techniques**
+   - Prefix sum arrays
+   - Precomputation for multiple queries
+   - Space-time tradeoffs
+
+3. **Mathematical Logic**
+   - Counting and combinatorics
+   - Difference calculations
+   - Optimization formulas
+
+4. **Edge Cases to Consider**
+   - Empty ranges
+   - Single character strings
+   - All same characters
+   - Negative numbers (for palindrome problem)
+
+### 💡 Tips for Capgemini Coding Exam:
+
+1. **Read Problem Carefully**
+   - Understand input/output format
+   - Check constraints (N, K, Q values)
+   - Identify edge cases
+
+2. **Think Before Coding**
+   - Can brute force work within time limit?
+   - Is optimization needed?
+   - What data structures help?
+
+3. **Test with Examples**
+   - Run through sample inputs mentally
+   - Verify your logic
+   - Check boundary conditions
+
+4. **Code Cleanly**
+   - Use meaningful variable names
+   - Add comments for complex logic
+   - Handle edge cases explicitly
+
+5. **Common Patterns**
+   - Prefix sums for range queries
+   - Two pointers for arrays
+   - Hash maps for frequency counting
+   - Greedy approaches for optimization
 
 ---
 
