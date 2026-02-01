@@ -35,6 +35,33 @@ int arr[5] = {10, 20, 30, 40, 50};
 // Index:    0   1   2   3   4
 ```
 
+### 📝 Quick Links to Array Problems:
+- [Q1: Find Largest Element](#q1-find-the-largest-element-in-an-array)
+- [Q2: Reverse an Array](#q2-reverse-an-array)
+- [Q3: Find Duplicate Element](#q3-find-duplicate-element)
+- [Q4: Count Frequency](#q4-count-frequency-of-an-element)
+- [Q5: Check Prime Number](#q5-check-if-a-number-is-prime)
+- [Q6: Print All Primes](#q6-print-all-prime-numbers-up-to-n)
+- [Q7: Sum of Array](#q7-find-sum-of-array-elements)
+- [Q8: Average of Array](#q8-find-average-of-array-elements)
+- [Q9: Check if Sorted](#q9-check-if-array-is-sorted)
+- [Q10: Missing Number](#q10-find-missing-number-in-array-1-to-n)
+- [Q11: Count Even/Odd](#q11-count-even-and-odd-numbers)
+- [Q12: Rotate Array](#q12-rotate-array-by-k-positions)
+- [Q13: Find Smallest](#q13-find-smallest-element-in-array)
+- [Q14: Remove Duplicates](#q14-remove-duplicates-from-sorted-array)
+- [Q15: Second Largest](#q15-find-second-largest-element)
+- [Q16: Swap Numbers](#q16-swap-two-numbers)
+- [Q17: Fibonacci Series](#q17-fibonacci-series)
+- [Q18: Factorial](#q18-find-factorial-of-a-number)
+- [Q19: Armstrong Number](#q19-check-armstrong-number)
+- [Q20: Reverse Number](#q20-reverse-a-number)
+- [Q21: Palindrome Number](#q21-check-palindrome-number)
+- [Q22: GCD](#q22-gcd-greatest-common-divisor)
+- [Q23: LCM](#q23-lcm-least-common-multiple)
+- [Q24: Sum of Digits](#q24-sum-of-digits)
+- [Q25: Power](#q25-power-of-a-number)
+
 ---
 
 ### Q1: Find the Largest Element in an Array
@@ -1428,6 +1455,14 @@ int main() {
 
 ## 2. STRINGS
 
+### 📝 Quick Links to String Problems:
+- [Q1: Reverse a String](#q1-reverse-a-string)
+- [Q2: Check Palindrome](#q2-check-if-string-is-palindrome)
+- [Q3: Count Vowels](#q3-count-vowels-in-a-string)
+- [Q4: Count Words](#q4-count-words-in-a-string)
+
+---
+
 ### Q1: Reverse a String
 
 **Problem:** Reverse the given string.
@@ -1621,6 +1656,12 @@ int main() {
 
 ## 3. SEARCHING
 
+### 📝 Quick Links to Searching Problems:
+- [Q1: Linear Search](#q1-linear-search)
+- [Q2: Binary Search](#q2-binary-search)
+
+---
+
 ### Q1: Linear Search
 
 **Problem:** Find if an element exists in an array and return its position.
@@ -1740,6 +1781,12 @@ Output: Position 2
 ---
 
 ## 4. SORTING
+
+### 📝 Quick Links to Sorting Problems:
+- [Q1: Bubble Sort](#q1-bubble-sort)
+- [Q2: Selection Sort](#q2-selection-sort)
+
+---
 
 ### Q1: Bubble Sort
 
@@ -1893,6 +1940,12 @@ Final: {11, 12, 22, 25, 64}
 ---
 
 ## 5. STACK & QUEUE
+
+### 📝 Quick Links:
+- [Stack (LIFO)](#stack-lifo---last-in-first-out)
+- [Queue (FIFO)](#queue-fifo---first-in-first-out)
+
+---
 
 ### Stack (LIFO - Last In First Out)
 
@@ -2071,6 +2124,13 @@ Dequeue:    |20|30|
 ---
 
 ## 6. RECURSION
+
+### 📝 Quick Links to Recursion Problems:
+- [Q1: Factorial Using Recursion](#q1-factorial-using-recursion)
+- [Q2: Print Numbers 1 to N](#q2-print-numbers-1-to-n)
+- [Q3: Sum of N Natural Numbers](#q3-sum-of-n-natural-numbers)
+
+---
 
 ### What is Recursion?
 A function that calls itself to solve a problem by breaking it into smaller subproblems.
