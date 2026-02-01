@@ -5,7 +5,7 @@
 ---
 
 ## 📚 Table of Contents
-1. [Arrays (Most Important)](#1-arrays-most-important)
+1. [Arrays & Basic Problems (Most Important)](#1-arrays-most-important)
 2. [Strings](#2-strings)
 3. [Searching](#3-searching)
 4. [Sorting](#4-sorting)
@@ -13,6 +13,15 @@
 6. [Recursion](#6-recursion)
 7. [7-Day Study Plan](#7-day-study-plan)
 8. [Interview Tips](#interview-tips)
+
+**Quick Jump to Common Interview Questions:**
+- [Swap Two Numbers](#q16-swap-two-numbers)
+- [Fibonacci Series](#q17-fibonacci-series)
+- [Prime Numbers](#q5-check-if-a-number-is-prime)
+- [Palindrome](#q21-check-palindrome-number)
+- [Armstrong Number](#q19-check-armstrong-number)
+- [Factorial](#q18-find-factorial-of-a-number)
+- [GCD & LCM](#q22-gcd-greatest-common-divisor)
 
 ---
 
@@ -840,6 +849,583 @@ Output: 15
 
 ---
 
+### Q16: Swap Two Numbers
+
+**Problem:** Swap two numbers without using a third variable.
+
+**Input:** `a = 5, b = 10`  
+**Output:** `a = 10, b = 5`
+
+**Method 1: Using Third Variable (Simple)**
+```cpp
+#include<iostream>
+using namespace std;
+
+void swapWithTemp(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int a = 5, b = 10;
+    
+    cout << "Before swap: a = " << a << ", b = " << b << endl;
+    swapWithTemp(a, b);
+    cout << "After swap: a = " << a << ", b = " << b << endl;
+    
+    return 0;
+}
+```
+
+**Method 2: Without Third Variable (Addition/Subtraction)**
+```cpp
+#include<iostream>
+using namespace std;
+
+void swapWithoutTemp(int &a, int &b) {
+    a = a + b;  // a = 5 + 10 = 15
+    b = a - b;  // b = 15 - 10 = 5
+    a = a - b;  // a = 15 - 5 = 10
+}
+
+int main() {
+    int a = 5, b = 10;
+    
+    cout << "Before swap: a = " << a << ", b = " << b << endl;
+    swapWithoutTemp(a, b);
+    cout << "After swap: a = " << a << ", b = " << b << endl;
+    
+    return 0;
+}
+```
+
+**Method 3: Using XOR (Bitwise)**
+```cpp
+#include<iostream>
+using namespace std;
+
+void swapXOR(int &a, int &b) {
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+}
+
+int main() {
+    int a = 5, b = 10;
+    
+    cout << "Before swap: a = " << a << ", b = " << b << endl;
+    swapXOR(a, b);
+    cout << "After swap: a = " << a << ", b = " << b << endl;
+    
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "I can swap two numbers in three ways: using a temporary variable (simplest), using arithmetic operations (a=a+b, b=a-b, a=a-b), or using XOR bitwise operation. The temp variable method is most readable and recommended."
+
+---
+
+### Q17: Fibonacci Series
+
+**Problem:** Print first n numbers of Fibonacci series (0, 1, 1, 2, 3, 5, 8, 13...)
+
+**Input:** `n = 7`  
+**Output:** `0 1 1 2 3 5 8`
+
+**Logic:**
+- First two numbers are 0 and 1
+- Each next number = sum of previous two numbers
+
+**Method 1: Iterative (Recommended)**
+```cpp
+#include<iostream>
+using namespace std;
+
+void printFibonacci(int n) {
+    int first = 0, second = 1;
+    
+    cout << "Fibonacci series: ";
+    
+    for(int i = 0; i < n; i++) {
+        if(i == 0) {
+            cout << first << " ";
+        }
+        else if(i == 1) {
+            cout << second << " ";
+        }
+        else {
+            int next = first + second;
+            cout << next << " ";
+            first = second;
+            second = next;
+        }
+    }
+}
+
+int main() {
+    int n = 7;
+    printFibonacci(n);
+    return 0;
+}
+```
+
+**Dry Run:**
+```
+n = 7
+first = 0, second = 1
+
+i=0: Print 0
+i=1: Print 1
+i=2: next = 0+1=1, Print 1, first=1, second=1
+i=3: next = 1+1=2, Print 2, first=1, second=2
+i=4: next = 1+2=3, Print 3, first=2, second=3
+i=5: next = 2+3=5, Print 5, first=3, second=5
+i=6: next = 3+5=8, Print 8, first=5, second=8
+
+Output: 0 1 1 2 3 5 8
+```
+
+**Method 2: Using Recursion**
+```cpp
+#include<iostream>
+using namespace std;
+
+int fibonacci(int n) {
+    // Base cases
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    
+    // Recursive case
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+int main() {
+    int n = 7;
+    
+    cout << "Fibonacci series: ";
+    for(int i = 0; i < n; i++) {
+        cout << fibonacci(i) << " ";
+    }
+    
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "Fibonacci series starts with 0 and 1, and each subsequent number is the sum of the previous two. I prefer the iterative approach using two variables to track the last two numbers. This is O(n) time and O(1) space. The recursive approach is elegant but less efficient at O(2^n)."
+
+---
+
+### Q18: Find Factorial of a Number
+
+**Problem:** Find factorial (n! = n × (n-1) × (n-2) × ... × 1)
+
+**Input:** `n = 5`  
+**Output:** `120`
+
+**Method 1: Iterative**
+```cpp
+#include<iostream>
+using namespace std;
+
+int factorial(int n) {
+    int result = 1;
+    
+    for(int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int n = 5;
+    cout << "Factorial of " << n << " = " << factorial(n);
+    return 0;
+}
+```
+
+**Dry Run:**
+```
+n = 5
+result = 1
+
+i=1: result = 1 * 1 = 1
+i=2: result = 1 * 2 = 2
+i=3: result = 2 * 3 = 6
+i=4: result = 6 * 4 = 24
+i=5: result = 24 * 5 = 120
+
+Output: 120
+```
+
+**Interview Answer:**
+> "I multiply numbers from 1 to n iteratively. Initialize result to 1, then multiply by each number. Time complexity is O(n)."
+
+---
+
+### Q19: Check Armstrong Number
+
+**Problem:** Check if a number equals the sum of cubes of its digits.
+
+**Input:** `153`  
+**Output:** `Armstrong` (1³ + 5³ + 3³ = 1 + 125 + 27 = 153)
+
+**Logic:**
+- Extract each digit
+- Cube it and add to sum
+- Compare sum with original number
+
+**Code:**
+```cpp
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+bool isArmstrong(int n) {
+    int original = n;
+    int sum = 0;
+    
+    while(n > 0) {
+        int digit = n % 10;      // Extract last digit
+        sum += pow(digit, 3);    // Add cube of digit
+        n = n / 10;              // Remove last digit
+    }
+    
+    return (sum == original);
+}
+
+int main() {
+    int n = 153;
+    
+    if(isArmstrong(n))
+        cout << n << " is an Armstrong number";
+    else
+        cout << n << " is not an Armstrong number";
+    
+    return 0;
+}
+```
+
+**Dry Run:**
+```
+n = 153
+original = 153, sum = 0
+
+Iteration 1: digit = 153 % 10 = 3
+             sum = 0 + 3³ = 27
+             n = 153 / 10 = 15
+
+Iteration 2: digit = 15 % 10 = 5
+             sum = 27 + 5³ = 152
+             n = 15 / 10 = 1
+
+Iteration 3: digit = 1 % 10 = 1
+             sum = 152 + 1³ = 153
+             n = 1 / 10 = 0
+
+sum (153) == original (153)? YES
+
+Output: Armstrong number
+```
+
+**Interview Answer:**
+> "An Armstrong number equals the sum of cubes of its digits. I extract each digit using modulo 10, cube it, add to sum, and remove the digit by dividing by 10. Finally, I compare the sum with the original number."
+
+---
+
+### Q20: Reverse a Number
+
+**Problem:** Reverse the digits of a number.
+
+**Input:** `1234`  
+**Output:** `4321`
+
+**Logic:**
+- Extract last digit using modulo
+- Build reversed number by multiplying by 10 and adding digit
+- Remove last digit by dividing by 10
+
+**Code:**
+```cpp
+#include<iostream>
+using namespace std;
+
+int reverseNumber(int n) {
+    int reversed = 0;
+    
+    while(n > 0) {
+        int digit = n % 10;           // Extract last digit
+        reversed = reversed * 10 + digit;  // Add to reversed
+        n = n / 10;                   // Remove last digit
+    }
+    
+    return reversed;
+}
+
+int main() {
+    int n = 1234;
+    cout << "Original: " << n << endl;
+    cout << "Reversed: " << reverseNumber(n);
+    return 0;
+}
+```
+
+**Dry Run:**
+```
+n = 1234
+reversed = 0
+
+Iteration 1: digit = 1234 % 10 = 4
+             reversed = 0 * 10 + 4 = 4
+             n = 1234 / 10 = 123
+
+Iteration 2: digit = 123 % 10 = 3
+             reversed = 4 * 10 + 3 = 43
+             n = 123 / 10 = 12
+
+Iteration 3: digit = 12 % 10 = 2
+             reversed = 43 * 10 + 2 = 432
+             n = 12 / 10 = 1
+
+Iteration 4: digit = 1 % 10 = 1
+             reversed = 432 * 10 + 1 = 4321
+             n = 1 / 10 = 0
+
+Output: 4321
+```
+
+**Interview Answer:**
+> "I extract the last digit using modulo 10, build the reversed number by multiplying the current reversed value by 10 and adding the digit, then remove the last digit by integer division. This is O(log n) where n is the number."
+
+---
+
+### Q21: Check Palindrome Number
+
+**Problem:** Check if a number reads the same forwards and backwards.
+
+**Input:** `121`  
+**Output:** `Palindrome`
+
+**Code:**
+```cpp
+#include<iostream>
+using namespace std;
+
+bool isPalindromeNumber(int n) {
+    int original = n;
+    int reversed = 0;
+    
+    while(n > 0) {
+        int digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n = n / 10;
+    }
+    
+    return (reversed == original);
+}
+
+int main() {
+    int n = 121;
+    
+    if(isPalindromeNumber(n))
+        cout << n << " is a palindrome";
+    else
+        cout << n << " is not a palindrome";
+    
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "I reverse the number using the same logic as reverse number problem, then compare the reversed number with the original. If they're equal, it's a palindrome."
+
+---
+
+### Q22: GCD (Greatest Common Divisor)
+
+**Problem:** Find the GCD of two numbers.
+
+**Input:** `a = 48, b = 18`  
+**Output:** `6`
+
+**Method 1: Euclidean Algorithm**
+```cpp
+#include<iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while(b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a = 48, b = 18;
+    cout << "GCD of " << a << " and " << b << " = " << gcd(a, b);
+    return 0;
+}
+```
+
+**Dry Run:**
+```
+a = 48, b = 18
+
+Iteration 1: temp = 18
+             b = 48 % 18 = 12
+             a = 18
+
+Iteration 2: temp = 12
+             b = 18 % 12 = 6
+             a = 12
+
+Iteration 3: temp = 6
+             b = 12 % 6 = 0
+             a = 6
+
+b == 0, STOP
+
+Output: 6
+```
+
+**Method 2: Recursive**
+```cpp
+int gcd(int a, int b) {
+    if(b == 0) return a;
+    return gcd(b, a % b);
+}
+```
+
+**Interview Answer:**
+> "I use the Euclidean algorithm which repeatedly divides the larger number by the smaller and takes the remainder, until the remainder is 0. The last non-zero remainder is the GCD. This is very efficient with O(log min(a,b)) complexity."
+
+---
+
+### Q23: LCM (Least Common Multiple)
+
+**Problem:** Find the LCM of two numbers.
+
+**Input:** `a = 12, b = 18`  
+**Output:** `36`
+
+**Formula:** `LCM(a, b) = (a × b) / GCD(a, b)`
+
+**Code:**
+```cpp
+#include<iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while(b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int main() {
+    int a = 12, b = 18;
+    cout << "LCM of " << a << " and " << b << " = " << lcm(a, b);
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "I use the relationship between GCD and LCM: LCM(a,b) = (a × b) / GCD(a,b). First, I calculate GCD using the Euclidean algorithm, then apply the formula."
+
+---
+
+### Q24: Sum of Digits
+
+**Problem:** Find the sum of all digits in a number.
+
+**Input:** `1234`  
+**Output:** `10` (1 + 2 + 3 + 4)
+
+**Code:**
+```cpp
+#include<iostream>
+using namespace std;
+
+int sumOfDigits(int n) {
+    int sum = 0;
+    
+    while(n > 0) {
+        sum += n % 10;  // Add last digit
+        n = n / 10;     // Remove last digit
+    }
+    
+    return sum;
+}
+
+int main() {
+    int n = 1234;
+    cout << "Sum of digits of " << n << " = " << sumOfDigits(n);
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "I extract each digit using modulo 10, add it to the sum, and remove it by dividing by 10. This continues until all digits are processed."
+
+---
+
+### Q25: Power of a Number
+
+**Problem:** Calculate a^b (a raised to power b).
+
+**Input:** `a = 2, b = 5`  
+**Output:** `32` (2^5 = 2×2×2×2×2)
+
+**Method 1: Iterative**
+```cpp
+#include<iostream>
+using namespace std;
+
+int power(int a, int b) {
+    int result = 1;
+    
+    for(int i = 0; i < b; i++) {
+        result *= a;
+    }
+    
+    return result;
+}
+
+int main() {
+    int a = 2, b = 5;
+    cout << a << "^" << b << " = " << power(a, b);
+    return 0;
+}
+```
+
+**Method 2: Using Built-in Function**
+```cpp
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int a = 2, b = 5;
+    cout << a << "^" << b << " = " << pow(a, b);
+    return 0;
+}
+```
+
+**Interview Answer:**
+> "I can calculate power iteratively by multiplying the base 'a' by itself 'b' times. Alternatively, I can use the built-in pow() function from cmath library. For better efficiency with large powers, I could implement binary exponentiation."
+
+---
+
 ## 2. STRINGS
 
 ### Q1: Reverse a String
@@ -1643,10 +2229,12 @@ int main() {
 
 ## 7-DAY STUDY PLAN
 
-### Day 1-2: Arrays
+### Day 1-2: Arrays & Basic Math Problems
 - ✅ Understand array basics
 - ✅ Practice: Largest element, Reverse array, Second largest
 - ✅ Practice: Find duplicate, Count frequency
+- ✅ Basic problems: Swap numbers, Factorial, Prime check
+- ✅ Number problems: Palindrome, Armstrong, Reverse number
 - 📝 Write code by hand, do dry runs
 
 ### Day 3: Strings + Searching
@@ -1666,9 +2254,11 @@ int main() {
 - ✅ Implement using arrays
 - 📝 Draw diagrams showing operations
 
-### Day 6: Recursion
+### Day 6: Recursion & Fibonacci
 - ✅ Understand how recursion works
 - ✅ Practice: Factorial, Print numbers, Sum
+- ✅ Fibonacci: Both iterative and recursive
+- ✅ GCD and LCM problems
 - 📝 Draw recursion trees
 
 ### Day 7: Revision + Mock Interview
@@ -1855,12 +2445,12 @@ returnType function(parameters) {
 
 | Day | Morning (1 hour) | Evening (1 hour) |
 |-----|------------------|------------------|
-| Day 1 | Learn array basics | Practice 3 array problems |
-| Day 2 | Review arrays | More array problems + dry runs |
-| Day 3 | Learn strings | Practice string + searching |
-| Day 4 | Learn sorting | Practice bubble & selection sort |
-| Day 5 | Learn stack & queue | Implement stack and queue |
-| Day 6 | Learn recursion | Practice recursion problems |
+| Day 1 | Arrays + Basic math (swap, factorial) | Practice 3 array problems |
+| Day 2 | Number problems (prime, palindrome, Armstrong) | More array + dry runs |
+| Day 3 | Strings + Fibonacci | Practice string + searching |
+| Day 4 | Sorting + GCD/LCM | Practice bubble & selection sort |
+| Day 5 | Stack & queue | Implement stack and queue |
+| Day 6 | Recursion | Practice recursion + Fibonacci recursive |
 | Day 7 | Revise all topics | Mock interview practice |
 
 ---
